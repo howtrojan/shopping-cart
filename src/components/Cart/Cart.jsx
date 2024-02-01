@@ -22,7 +22,7 @@ export const Cart = () => {
   return (
     <section className={`cart ${isCartVisible ? 'cart-active' : ''}`}>
       <div className="cart-items">
-        {cartItens.map((cartItem) => <CartItem key={cartItem.id} data={cartItem} /> )}
+        {cartItens.map((cartItem) => <CartItem key={cartItem.index} data={cartItem} /> )}
         
       </div>
 

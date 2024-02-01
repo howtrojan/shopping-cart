@@ -6,15 +6,14 @@ import AppContext from "../../context/AppContext";
 
 export const CartItem = ({ data }) => {
   const { cartItens, setCartItens } = useContext(AppContext);
-  const { id, title, thumbnail, price } = data;
+  const { index , title, thumbnail, price } = data;
 
-  const handleRemoveItem = () => {
-    const itemIndex = cartItens.findIndex((item) => item.id === id);
-    if (itemIndex !== -1) {      
-      const updatedItems = cartItens.filter((_, index) => index !== itemIndex);      
-      setCartItens(updatedItems);
-    }
+  const handleRemoveItem = () => {    
+    const updatedItems = [...cartItens];
+    updatedItems.splice(index, 1);    
+    setCartItens(updatedItems);
   };
+  
   
   return (
     <section className="cart-item">
