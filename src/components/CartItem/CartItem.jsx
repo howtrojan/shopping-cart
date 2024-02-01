@@ -10,12 +10,12 @@ export const CartItem = ({ data }) => {
 
   const handleRemoveItem = () => {
     const itemIndex = cartItens.findIndex((item) => item.id === id);
-    if (itemIndex !== -1) {
-      const updatedItems = [...cartItens];
-      updatedItems.splice(itemIndex, 1);
+    if (itemIndex !== -1) {      
+      const updatedItems = cartItens.filter((_, index) => index !== itemIndex);      
       setCartItens(updatedItems);
     }
   };
+  
   return (
     <section className="cart-item">
       <img className="cart-item-img" src={thumbnail} alt="Imagem do Produto" />
