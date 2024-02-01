@@ -3,6 +3,7 @@ import './SearchBar.css';
 import { useState, useContext } from "react";
 import fetchProducts from "../../api/fetchProducts";
 import AppContext from "../../context/AppContext";
+import Logo from '../../assets/mercadolivre.PNG'
 
 export const SearchBar = () => {
     const { setProducts, setLoading } = useContext(AppContext);   
@@ -17,6 +18,8 @@ export const SearchBar = () => {
     }    
 
   return (
+    <>
+    <img src={Logo} alt="Logo Mercado Livre" />
     <form className="search-bar" onSubmit={HandleSearch}>
       <input
         type="search"
@@ -30,5 +33,6 @@ export const SearchBar = () => {
         <BsSearch />
       </button>
     </form>
+    </>
   );
 };

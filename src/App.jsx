@@ -1,14 +1,15 @@
-import {Header} from "../src/components/Header/Header"
-import Products from "./components/Products/Products";
+import { Header } from "../src/components/Header/Header"
+import { Products } from "./components/Products/Products";
 import { Provider } from "./context/Provider";
+import { Cart } from "./components/Cart/Cart";
 
 function App() {
   return (
     <Provider>
       <Header />
       <Products />
-    </Provider>
-    
+      <Cart />
+    </Provider>    
   );
 }
 

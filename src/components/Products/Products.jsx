@@ -5,17 +5,20 @@ import { Card } from "../Card/Card";
 import { Loading } from "../Loading/Loading";
 import AppContext from "../../context/AppContext";
 
-function Products() {
+export const  Products = () => {
 
   const {products , setProducts, loading, setLoading} = useContext(AppContext);    
   
-
+  /* eslint-disable */
   useEffect(() => {
-    fetchProducts("iphone").then((response) => {
+    fetchProducts("").then((response) => {
       setProducts(response);
       setLoading(false);
     });
-  }, []);
+  },[]);
+  /* eslint-enable */
+
+  
 
   return loading ? (
     <Loading />
@@ -28,4 +31,3 @@ function Products() {
   );
 }
 
-export default Products;
